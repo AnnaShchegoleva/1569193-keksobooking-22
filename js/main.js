@@ -1,15 +1,15 @@
-let returnRandomInt = function (from, to) {
+const getRandomInt = function (from, to) {
   if (to < 0 || from < 0) {
-    return 0;
+    return null;
   } else {
     return Math.round(from + Math.random() * (to + 1 - from));
   }
 };
 
-let returnRandomFloat = function (from, to) {
+const getRandomFloat = function (from, to) {
   return from + Math.random() * (to + 1 - from);
 };
 
-returnRandomInt(2,5);
-returnRandomFloat(-1, -20);
+getRandomInt(2, 5);
+getRandomFloat(-1, -20);
 
