@@ -1,7 +1,7 @@
-const types = ['palace', 'flat', 'house', 'bungalow'];
-const checkins = ['12:00', '13:00', '14:00'];
-const features = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
-const photos = ['http://o0.github.io/assets/images/tokyo/hotel1.jpg', 'http://o0.github.io/assets/images/tokyo/hotel2.jpg', 'http://o0.github.io/assets/images/tokyo/hotel3.jpg'];
+const TYPES = ['palace', 'flat', 'house', 'bungalow'];
+const CHECKINS = ['12:00', '13:00', '14:00'];
+const FEATURES = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
+const PHOTOS = ['http://o0.github.io/assets/images/tokyo/hotel1.jpg', 'http://o0.github.io/assets/images/tokyo/hotel2.jpg', 'http://o0.github.io/assets/images/tokyo/hotel3.jpg'];
 const bookObjects =[];
 
 const getRandomInt = function (from, to) {
@@ -34,14 +34,14 @@ for (let i = 0; i < 10; i++) {
     title: 'Предложение о бронировании ' + '#' + getRandomInt(1, 10),
     address: location.x +','+ location.y,
     price: getRandomInt(0, 7000),
-    type: types[getRandomInt(0, 3)],
+    type: TYPES[getRandomInt(0, 3)],
     rooms: getRandomInt(0, 20),
     guests: getRandomInt(0, 70),
-    checkin: checkins[getRandomInt(0, 2)],
-    checkout: checkins[getRandomInt(0, 2)],
-    features: getRandomArray(features),
+    checkin: CHECKINS[getRandomInt(0, 2)],
+    checkout: CHECKINS[getRandomInt(0, 2)],
+    features: getRandomArray(FEATURES),
     description: '',
-    photos: getRandomArray(photos),
+    photos: getRandomArray(PHOTOS),
   }
 
   offer.description = ('Апартаменты представляют собой ' + offer.type + ' и включают ' + offer.rooms + ' комнат. В них может разместится до ' + offer.guests + ' гостей. Дополнительные услуги ' + offer.features.join(', '));
