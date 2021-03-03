@@ -1,11 +1,8 @@
-const BOOKOBJECTS =[];
-const AUTHORS = [];
-const OFFERS = [];
-const LOCATIONS = [];
 const types = ['palace', 'flat', 'house', 'bungalow'];
 const checkins = ['12:00', '13:00', '14:00'];
 const features = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
 const photos = ['http://o0.github.io/assets/images/tokyo/hotel1.jpg', 'http://o0.github.io/assets/images/tokyo/hotel2.jpg', 'http://o0.github.io/assets/images/tokyo/hotel3.jpg'];
+const bookObjects =[];
 
 const getRandomInt = function (from, to) {
   if (to < 0 || from < 0) {
@@ -48,9 +45,6 @@ for (let i = 0; i < 10; i++) {
   }
 
   offer.description = ('Апартаменты представляют собой ' + offer.type + ' и включают ' + offer.rooms + ' комнат. В них может разместится до ' + offer.guests + ' гостей. Дополнительные услуги ' + offer.features.join(', '));
-  AUTHORS.push(author);
-  OFFERS.push(offer);
-  LOCATIONS.push(location);
 
   const bookObject = {
     author: author,
@@ -58,7 +52,7 @@ for (let i = 0; i < 10; i++) {
     location: location,
   }
 
-  BOOKOBJECTS.push(bookObject);
+  bookObjects.push(bookObject);
 }
 
 //console.log(BOOKOBJECTS);
