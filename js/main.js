@@ -1,24 +1,7 @@
-const TYPES = ['palace', 'flat', 'house', 'bungalow'];
-const CHECKINS = ['12:00', '13:00', '14:00'];
-const FEATURES = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
-const PHOTOS = ['http://o0.github.io/assets/images/tokyo/hotel1.jpg', 'http://o0.github.io/assets/images/tokyo/hotel2.jpg', 'http://o0.github.io/assets/images/tokyo/hotel3.jpg'];
-const bookObjects =[];
 
-const getRandomInt = function (from, to) {
-  if (to < 0 || from < 0) {
-    return null;
-  } else {
-    return Math.round(from + Math.random() * (to + 1 - from));
-  }
-};
+import {bookObjects, TYPES, CHECKINS, FEATURES, PHOTOS} from './data.js';
+import {getRandomInt, getRandomFloat, getRandomArray} from './util.js';
 
-const getRandomFloat = function (from, to) {
-  return from + Math.random() * (to + 1 - from);
-};
-
-const getRandomArray = function (array) {
-  return array.slice(0, getRandomInt(0, array.length));
-}
 
 for (let i = 0; i < 10; i++) {
   const author = {
@@ -55,4 +38,3 @@ for (let i = 0; i < 10; i++) {
   bookObjects.push(bookObject);
 }
 
-//console.log(BOOKOBJECTS);
