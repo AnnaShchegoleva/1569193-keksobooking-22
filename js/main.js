@@ -1,6 +1,7 @@
 
 import {bookObjects, TYPES, CHECKINS, FEATURES, PHOTOS} from './data.js';
 import {getRandomInt, getRandomFloat, getRandomArray} from './util.js';
+import {createCard} from './element.js';
 
 
 for (let i = 0; i < 10; i++) {
@@ -19,7 +20,7 @@ for (let i = 0; i < 10; i++) {
     price: getRandomInt(0, 7000),
     type: TYPES[getRandomInt(0, 3)],
     rooms: getRandomInt(0, 20),
-    guests: getRandomInt(0, 70),
+    guests: getRandomInt(0, 40),
     checkin: CHECKINS[getRandomInt(0, 2)],
     checkout: CHECKINS[getRandomInt(0, 2)],
     features: getRandomArray(FEATURES),
@@ -38,3 +39,9 @@ for (let i = 0; i < 10; i++) {
   bookObjects.push(bookObject);
 }
 
+let cardTemplate = document.querySelector('#card').content.querySelector('.popup');
+
+let parentObject = document.querySelector('#map-canvas');
+bookObjects.forEach((book) => {
+  parentObject.appendChild(createCard(book, cardTemplate));
+})
